@@ -1,0 +1,51 @@
+<app-header></app-header>
+
+<div class="container">
+  <!-- Leva strana: Slike -->
+  <div class="image-section">
+    <img [src]="selectedImage" class="main-image" alt="Glavna slika kolača" />
+    <div class="thumbnails">
+      <img
+        *ngFor="let img of images"
+        [ngSrc]="img"
+        width = "80"
+        height= "80"
+        class="thumbnail"
+        (click)="changeImage(img)"
+        [class.active]="img === selectedImage"
+      />
+    </div>
+  </div>
+
+  <!-- Desna strana: Detalji -->
+  <div class="details-section">
+    <h1>{{ cake.name }}</h1>
+    <div class="price">{{ cake.price}}RSD</div>
+    <div *ngIf="source != 'bites'" class="delivery"><strong>Opis: </strong> {{cake.descr }}</div>
+    <div class="ingredients"><strong>Sastojci:</strong> {{ cake.ingredients }}</div>
+    <div class="delivery"><strong>Dostava:</strong> {{ cake.delivery }} </div>
+    <div class="delivery" *ngIf="source === 'bites'"><strong>Napomena:</strong> {{cake.note}}</div>
+    <div *ngIf="source === 'bites'" class="weight"><strong>Masa: </strong> jedan komad ima oko {{cake.weight}} grama.</div>
+    <div *ngIf="source === 'muffin'" class="weight"><strong>Masa: </strong> jedan mafin ima oko 100 grama.</div>
+    <div *ngIf="source === 'cheesecake'" class="weight"><strong>Masa: </strong>{{ cake.weight }}kg {{cake.portions}}</div>
+    <div *ngIf="source === 'cheesecake'" class="delivery">Čuvati u frižideru na temperaturi od 4°C.</div>
+    <div class="delivery"><strong>Rok upotrebe:</strong> 7 dana od isporuke.</div>
+    <div class="delivery"><strong>Molimo Vas poručite željene proizvode minimum 2 dana ranije (48h).</strong></div>
+    
+    
+    
+
+    <div class="quantity-section">
+      <button (click)="decreaseQuantity()">-</button>
+      <div *ngIf="source === 'muffin' || source === 'bites'" class="quantity">{{ quantity }}kg </div>
+      <div *ngIf="source === 'cheesecake'" class="quantity">{{ quantity }}</div>
+      <button (click)="increaseQuantity()">+</button>
+    </div>
+
+    <button class="add-to-cart" (click)="addToCart()">
+      <i class="fas fa-shopping-cart"></i> Dodaj u korpu
+    </button>
+  </div>
+</div>
+
+<app-footer></app-footer>

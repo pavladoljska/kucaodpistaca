@@ -1,0 +1,66 @@
+<app-header></app-header>
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()" class="order-container">
+  <div class="billing">
+    <h2>Detalji za naplatu</h2>
+    <div class="field"><label>Ime i prezime *</label><input formControlName="name" /><div *ngIf="orderForm.get('name')?.touched && orderForm.get('name')?.invalid" class="error">
+              Ovo polje je obavezno</div>
+    </div>
+    <!-- <div class="field"><label>Prezime *</label><input formControlName="lastName" /></div> -->
+    <div class="field"><label>Adresa ulice *</label><input formControlName="street" placeholder="Ime ulice / kućni broj" /><div *ngIf="orderForm.get('street')?.touched && orderForm.get('name')?.invalid" class="error">
+              Ovo polje je obavezno</div></div>
+    <div class="field"><label>Apartman, stan, jedinica itd. (nije obavezno)</label><input formControlName="apartment" /></div>
+    <div class="field"><label>Gradska opština *</label><input formControlName="city" placeholder="Isporuku vršimo na teritoriji celog Beograda." /><div *ngIf="orderForm.get('city')?.touched && orderForm.get('name')?.invalid" class="error">
+              Ovo polje je obavezno</div></div>
+    <div class="field"><label>Telefon *</label><input formControlName="phone" /><div *ngIf="orderForm.get('name')?.touched && orderForm.get('phone')?.invalid" class="error">
+              Ovo polje je obavezno</div>
+              <div class="error" *ngIf="orderForm.get('phone')?.errors?.['pattern']">
+                Neispravan format broja telefona.
+              </div>
+    </div>
+    <div class="field"><label>Email adresa *</label><input formControlName="email" /><div *ngIf="orderForm.get('email')?.touched && orderForm.get('name')?.invalid" class="error">
+              Ovo polje je obavezno</div>
+              <div class="error" *ngIf="orderForm.get('email')?.errors?.['email']">
+                Neispravan format email adrese.
+              </div>
+    </div>
+  </div>
+
+  <div class="delivery">
+    <h2>Dodatni detalji isporuke</h2>
+    <div class="field"><label>Dodatne napomene (opciono)</label><textarea formControlName="notes" placeholder="Posebne napomene za isporuku..."></textarea></div>
+    <div class="field"><label>Željeni datum dostave *</label><input type="date" formControlName="deliveryDate" [min]="minDate"/><div *ngIf="orderForm.get('name')?.touched && orderForm.get('name')?.invalid" class="error">
+              Ovo polje je obavezno</div></div>
+    <div class="field"><label>Željeno vreme dostave *</label>
+      <select formControlName="deliveryTime">
+        <option value="">Izaberite</option>
+        <option value="10-13h">9-12h</option>
+        <option value="13-17h">12-15h</option>
+        <option value="17-21h">15-18h</option>
+      </select>
+      <div *ngIf="orderForm.get('name')?.touched && orderForm.get('name')?.invalid" class="error">
+              Ovo polje je obavezno</div>
+    </div>
+  </div>
+  
+
+  <div class="summary">
+    <h2>Vaša porudžbina</h2>
+    <table>
+      <tr><th>Proizvod</th><th>Ukupno</th></tr>
+
+
+      <tr *ngFor="let item of cartItems">
+        <td> {{ item.name }} x {{item.quantity}}</td>
+        <td>{{ item.price * item.quantity }} RSD</td>
+      </tr>
+
+     <!-- <tr>
+        <td>{{ product.name }} × {{ product.quantity }}</td>
+        <td>{{ product.price }} RSD</td>
+      </tr> --> 
+      <tr><td><strong>Ukupno</strong></td><td><strong>{{ total }}RSD</strong></td></tr>
+    </table>
+    <button type="submit">Pošalji porudžbinu</button>
+  </div>
+</form>
+<app-footer></app-footer>

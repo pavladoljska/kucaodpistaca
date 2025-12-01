@@ -1,0 +1,53 @@
+<header class="header" [style.backgroundColor]="backgroundColor">
+  <div class="nav-container">
+    <div class="logo"><a routerLink="/" routerLinkActive="active"><img ngSrc="/assets/logo.png" width="100" height="100"></a></div>
+    <!-- Stari nav meni -->
+    <!--
+    <nav class="nav-menu">
+      <a routerLink="/" routerLinkActive="active">Početna</a>
+      <a routerLink="/cheesecake" routerLinkActive="active">Čizkejk</a>
+      <a routerLink="/muffin" routerLinkActive="active">Mafini</a>
+      <a routerLink="/delivery" routerLinkActive="active">Dostava</a>
+      <a routerLink="/pistachio" routerLinkActive="active">O pistaću</a>
+      <a href="#">Novi link</a>
+    </nav>
+    -->
+
+    <!-- Novi nav meni sa burger dugmetom -->
+    <div class="burger-menu" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav-menu responsive" [class.open]="menuOpen">
+      <a routerLink="/" routerLinkActive="active">Početna</a>
+      <a routerLink="/cheesecake" routerLinkActive="active">Čizkejk</a>
+      <a routerLink="/bites" routerLinkActive="active">Sitni kolači</a>
+      <a routerLink="/delivery" routerLinkActive="active">Dostava</a>
+      <a routerLink="/pistachio" routerLinkActive="active">O pistaću</a>
+      
+    </nav>
+    <!--<div class="language-dropdown" (click)="toggleLanguageMenu()" tabindex="0" (blur)="closeLanguageMenu()">
+          <span>{{ selectedLanguage }}</span>
+          <ul class="language-options" *ngIf="languageMenuOpen">
+            <li (click)="setLanguage('SR')">SR</li>
+            <li (click)="setLanguage('EN')">EN</li>
+          </ul>
+    </div> -->
+
+    <div class="lang">
+        <!-- <a routerLink="/" routerLinkActive="active">SR</a>
+        <a href="#">EN</a> -->
+        <div class="language-dropdown" (click)="toggleLanguageMenu()" tabindex="0" (blur)="closeLanguageMenu()">
+          <span>{{ selectedLanguage }}</span>
+          <ul class="language-options" *ngIf="languageMenuOpen">
+            <li (click)="setLanguage('SR')">SR</li>
+            <li (click)="setLanguage('EN')">EN</li>
+          </ul>
+        </div>
+        <a routerLink="/cart" routerLinkActive="active">
+              <i class="fas fa-shopping-cart"></i>
+        </a>
+    </div>
+  </div>
+</header>

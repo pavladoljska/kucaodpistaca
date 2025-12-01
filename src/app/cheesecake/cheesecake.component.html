@@ -1,0 +1,79 @@
+<body>
+    <app-header></app-header>
+
+    <div class="banner">
+        <p>Kremasto zadovoljstvo<br>
+        u svakom zalogaju</p>
+    </div>
+    <section class="about-pistachio">
+        <div class="about-container">
+            <div class="pistachio-grid">
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(1)" class="pistImg" ngSrc="/assets/webp/dubaibezpozadine.webp" loading="lazy" width="200" height="100" alt="Dubai">
+                    <h3>Dubai čizkejk</h3>
+                    <p>6500RSD (3kg)</p>
+                    <button (click)="addToCart(1,'Dubai čizkejk', 6500)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="1" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img  (click) = "gotoProduct1(2)" class="dubaiImg" ngSrc="/assets/webp/pistaccizkejkbezpozadine.webp"  loading="lazy" width="200" height="100" alt="Pistać">
+                    <h3>Pistać čizkejk</h3>
+                    <p>6000RSD (2.7kg)</p>
+                    <button (click)="addToCart(2,'Pistać čizkejk', 6000)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="2" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(3)" class="pistImg" src="/assets/webp/jagodabezpozadine.webp"   width="200" loading="lazy" height="100" alt="Pistaći i tradicija">
+                    <h3>Pistać-jagoda čizkejk</h3>
+                    <p>5000RSD (2.8kg)</p>
+                    <button (click)="addToCart(3, 'Pistać-jagoda čizkejk', 5000)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="3" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(4)" class="pistImg" ngSrc="/assets/webp/cizkejkmalinabezpozadine.webp" loading="lazy" width="160" height="80" alt="Pistaći i tradicija">
+                    <h3>Pistać-malina čizkejk</h3>
+                    <p>5800RSD (2.8kg)</p>
+                    <button (click)="addToCart(4,'Pistać-malina čizkejk', 5800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="4" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img  (click) = "gotoProduct1(5)" class="pistImg" ngSrc="/assets/webp/cizkejkborovnicabezpozadine.webp"  loading="lazy" width="200" height="100" alt="Pistaći i tradicija">
+                    <h3>Pistać-borovnica čizkejk</h3>
+                    <p>5400RSD (2.7kg) </p>
+                    <button (click)="addToCart(5, 'Pistać-borovnica čizkejk', 5400)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="5" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(6)" class="pistImg" ngSrc="/assets/webp/mangobezpozadine.webp"  loading="lazy" width="200" height="100" alt="Pistaći i tradicija">
+                    <h3>Pistać-mango čizkejk</h3>
+                    <p>5400RSD (2.7kg)</p>
+                    <button (click)="addToCart(6, 'Pistać-mango čizkejk', 5400)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="6" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(14)" class="dubaiImg" ngSrc="/assets/rafaelo cizkejk/Rafaelo bezpozadine.webp"  loading="lazy" width="200" height="100" alt="Pistaći i tradicija">
+                    <h3>Pistać-rafaelo čizkejk</h3>
+                    <p>5400RSD (2.8kg)</p>
+                    <button (click)="addToCart(14, 'Pistać-rafaelo čizkejk', 5400)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="14" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(15)" class="dubaiImg" ngSrc="/assets/beli dubai/Belidubai bezpozadine.webp"  loading="lazy" width="200" height="100" alt="Pistaći i tradicija">
+                    <h3>Beli Dubai čizkejk</h3>
+                    <p>6800RSD (3kg)</p>
+                    <button (click)="addToCart(15, 'Beli dubai čizkejk', 6800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="15" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(16)" class="pistImg" ngSrc="/assets/bezglutenski/Bezgluten bezpozadine.webp"  loading="lazy" width="200" height="100" alt="Pistaći i tradicija">
+                    <h3>Bezglutenski pistać-malina čizkejk</h3>
+                    <p>7200RSD (2kg)</p>
+                    <button (click)="addToCart(16, 'Bezglutenski pistać-malina čizkejk', 7200)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="16" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>
+</body>

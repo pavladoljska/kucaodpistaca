@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  gap: 40px;
+  padding: 150px 40px 40px 40px;
+  flex-wrap: wrap;
+}
+
+.image-section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.main-image {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+  border-color: #909634;
+}
+
+.details-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.description,
+.ingredients {
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #909634;
+  margin-bottom: 20px;
+}
+
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.quantity-section button {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  background-color: #909634;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.quantity {
+  font-size: 18px;
+  width: 30px;
+  text-align: center;
+}
+
+.add-to-cart {
+  background-color: #909634;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #7a822b;
+}
+
+.delivery {
+    margin-bottom: 20px;
+}
+.weight {
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 120px 20px 20px 20px;
+  }
+
+  .main-image {
+    height: 250px;
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
+
+  .details-section {
+    margin-top: 30px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .quantity-section {
+    justify-content: space-between;
+    max-width: 200px;
+  }
+}

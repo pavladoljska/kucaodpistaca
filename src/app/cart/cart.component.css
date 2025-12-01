@@ -1,0 +1,167 @@
+body {
+      margin: 0;
+      padding: 0;
+      color: #333;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/pipinemaslike.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+}
+.cart-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
+  padding-top:150px;
+  font-family: Arial, sans-serif;
+  color:#cfb97d;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-style: bold;
+}
+.mob {
+  display: none;
+}
+.cart-table th,
+.cart-table td, .ngContainer {
+  padding: 12px;
+  border-bottom: 1px solid #909634;
+  text-align: center;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.product-info img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: red;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 5px;
+}
+
+.coupon-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.coupon-section input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+}
+
+.coupon-section button {
+  padding: 10px 20px;
+  background-color: #909634;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.totals-section {
+  margin-bottom: 1.5rem;
+}
+.totals-section select {
+  padding: 8px;
+  margin-top: 5px;
+  margin-left: 5px;
+  color:#cfb97d;
+  color: white;
+  width: 170px;
+  border-radius: 20%;
+  border-color: #909634;
+  background-color: #909634;
+}
+.totals-section p {
+  padding: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.actions button {
+  flex: 1 1 48%;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #909634;
+}
+
+.checkout {
+  background-color: #909634;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .cart-table thead {
+    display: none;
+  }
+  .cart-table, .cart-table tbody, .cart-table tr, .cart-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .cart-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .cart-table td {
+    text-align: left;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .product-info img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 10px;
+  }
+  .product-info button {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+
+  .pc {
+    display: none;
+  }
+}

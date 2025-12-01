@@ -1,0 +1,82 @@
+<app-header></app-header>
+<body>
+<div class="cart-container">
+  <h1>Korpa</h1>
+  <table class="cart-table pc">
+    <thead>
+      <tr>
+        <th>Proizvod</th>
+        <th>Cena</th>
+        <th>Količina</th>
+        <th>Ukupno</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let item of cartItems">
+        <td class="product-info">
+          <img [src]="images[item.id]" alt="proizvod" />
+          <span>{{ item.name }}</span>
+        </td>
+        <td>{{ item.price }} RSD</td>
+       
+        <td>
+            {{ item.quantity}} <span *ngIf="isKgItem(item.id)">kg</span>
+        </td>
+        <td>{{ item.price * item.quantity }} RSD</td>
+        <td><button class = "deleteButton" (click)="removeItem(item)">×</button></td>
+      </tr> 
+
+
+    </tbody>
+  </table>
+
+
+
+  <table class="cart-table mob">
+    <thead>
+      <tr>
+        <th>Proizvod</th>
+        <th>Cena</th>
+        <th>Količina</th>
+        <th>Ukupno</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let item of cartItems">
+        <td class="product-info">
+          <img [src]="images[item.id]" alt="proizvod" />
+          <span>{{ item.name }} </span>
+          <button class = "deleteButton" (click)="removeItem(item)"> ×</button>
+        </td>
+        <td>{{ item.quantity}} <span *ngIf="isKgItem(item.id)">kg</span> x {{ item.price }} RSD</td>
+        <td>{{ item.price * item.quantity }} RSD</td>
+      </tr> 
+    </tbody>
+  </table>
+
+  <div class="coupon-section">
+    <input type="text" placeholder="Kod kupona" [(ngModel)]="couponCode" />
+    <button (click)="applyCoupon()">UPOTREBITE KUPON</button>
+  </div>
+
+  <div class="totals-section">
+    <p><strong>Ukupno:</strong> {{ total }} RSD</p>
+    <p>
+      <strong>Plaćanje: </strong>
+      <select [(ngModel)]="selectedPayment" name="payment">
+        <option *ngFor="let option of paymentOptions" [value]="option">
+          {{ option }}
+        </option>
+      </select>
+    </p>
+    <p><strong>Ukupno sa dostavom:</strong> {{ totalWithShipping }} RSD</p>
+  </div>
+
+  <div class="actions">
+    <button class="checkout" (click) = order()>🛒 NASTAVITE SA PLAĆANJEM</button>
+  </div>
+</div>
+</body>
+<app-footer></app-footer>

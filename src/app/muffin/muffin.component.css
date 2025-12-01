@@ -1,0 +1,168 @@
+.banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/assets/webp/slikazamafinistranu.webp');
+    /*height: var(--header-height1);
+    /*margin-top: var(--header-height1);*/
+    width:100%;
+    height:400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.banner p{
+    padding-top: 200px;
+    padding-left: 20px;
+    color:#cfb97d;
+    font-weight: 500;
+    font-size: 50px;
+    font-style: oblique;
+    justify-content: left;
+}
+
+
+
+
+
+.about-pistachio {
+  background-color: #f5f5f0;
+  padding: 60px 60px 20px 20px;
+  font-family: 'Segoe UI', sans-serif;
+
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-container h2 {
+  color: #556041; /* rgb(85, 96, 65) */
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.pistachio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.pistachio-card {
+  background-color: #cfb97d;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  min-height: 420px;
+}
+
+.pistachio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.pistachio-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.pistachio-card h3 {
+  color: #909634;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  justify-content: end;
+}
+
+.pistachio-card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.pistachio-card button {
+    background-color: #909634;
+    margin: 5px;
+    /*padding: 5px;*/
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color:#cfb97d;
+}
+.pistachio-card button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.pistachio-card i {
+    color:#556041;
+    margin-right: 10px;
+}
+
+.dubaiImg {
+  width: 80%;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 55px;
+}
+
+
+@media (max-width: 768px) {
+  .about-container h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .pistachio-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pistachio-card {
+    padding: 16px;
+  }
+
+  .pistachio-card img {
+    height: 180px;
+  }
+
+  .pistachio-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .pistachio-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner {
+    height: 300px;
+  }
+  .banner p{
+      font-size: 20px;
+      padding-top: 150px;
+      padding-right: 200px;
+  }
+  .about-pistachio {
+    padding: 40px 15px;
+  }
+
+  .about-container h2 {
+    font-size: 1.8rem;
+  }
+  .pistachio-card {
+    min-height: 350px;
+  }
+  .pistachio-card img {
+    height: 160px;
+  }
+}

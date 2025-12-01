@@ -1,0 +1,78 @@
+<body>
+    <app-header></app-header>
+
+    <div class="banner">
+        <p>Mekani spolja, sočni iznutra</p>
+    </div>
+    <section class="about-pistachio">
+        <div class="about-container">
+            <div class="pistachio-grid">
+                <div class="pistachio-card">
+                    <img  (click) = "gotoProduct1(7)" ngSrc="/assets/webp/mafinborovnicabezpozadine.webp"  width ="200" height="100" alt="Dubai">
+                    <h3>Borovnica-bela čokolada</h3>
+                    <p>1700RSD/KG</p>
+                    <button (click)="addToCart(7, 'Borovnica-bela čokolada mafin', 1700)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="7" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(8)" ngSrc="/assets/webp/mafincokobananabezpozadine.webp" width ="200" height="100"  alt="Pistać">
+                    <h3>Banana-crna čokolada</h3>
+                    <p>1600RSD/KG</p>
+                    <button (click)="addToCart(8, 'Banana-crna čokolada mafin', 1600)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="8" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(9)" ngSrc="/assets/webp/mafinpistacbelacokoladabezpozadine.webp"  width ="200" height="100"  alt="Pistaći i tradicija">
+                    <h3>Pistać-bela čokolada</h3>
+                    <p>1900RSD/KG</p>
+                    <button (click)="addToCart(9,'Pistać-bela čokolada mafin', 1900)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="9" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(10)" ngSrc="/assets/webp/mafinpistacbezpozadine.webp"  width ="200" height="100"  alt="Pistaći i tradicija">
+                    <h3>Pistać original</h3>
+                    <p>2000RSD/KG</p>
+                    <button (click)="addToCart(10, 'Pistać original mafin', 2000)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="10" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(11)" ngSrc="/assets/webp/mafinpistaccrnacokoladabezpozadine.webp"  width ="200" height="100"  alt="Pistaći i tradicija">
+                    <h3>Pistać-crna čokolada</h3>
+                    <p>1900RSD/KG</p>
+                    <button (click)="addToCart(11, 'Pistać-crna čokolada mafin', 1900)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="11" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(12)" ngSrc="/assets/webp/mafinkaramelabezpozadine.webp"  width ="200" height="100"  alt="Pistaći i tradicija">
+                    <h3>Karamela-crna čokolada</h3>
+                    <p>1600RSD/KG</p>
+                    <button (click)="addToCart(12, 'Karamela-crna čokolada mafin', 1600)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
+                    <button value="12" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(13)" ngSrc="/assets/webp/mafinmalinabezpozadine.webp" width ="200" height="100"  alt="Pistaći i tradicija">
+                    <h3>Limun-malina</h3>
+                    <p>1500RSD/KG</p>
+                    <button (click)="addToCart(13, 'Limun-malina mafin', 1500)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu (500g)</button>
+                    <button value="13" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(17)" ngSrc="/assets/kokos mafin/kokosmafin bezpozadine.webp" width ="200" height="100"  alt="Pistaći i tradicija">
+                    <h3>Pistać-kokos</h3>
+                    <p>1800RSD/KG</p>
+                    <button (click)="addToCart(17, 'Pistać-kokos mafin', 1800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu (500g)</button>
+                    <button value="17" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+                <div class="pistachio-card">
+                    <img (click) = "gotoProduct1(18)"  class="dubaiImg" ngSrc="/assets/pistac coko banana/Pistaccokobanana bezpozadine.webp" width ="200" height="100"  alt="Pistaći i tradicija">
+                    <h3>Pistać-banana-crna čokolada</h3>
+                    <p>1900RSD/KG</p>
+                    <button (click)="addToCart(18, 'Limun-malina mafin', 1900)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu (500g)</button>
+                    <button value="18" (click) = "gotoProduct($event)">Saznaj više</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>
+</body>

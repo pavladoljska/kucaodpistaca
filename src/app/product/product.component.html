@@ -6,7 +6,7 @@
     <img [src]="selectedImage" class="main-image" alt="Glavna slika kolača" />
     <div class="thumbnails">
       <img
-        *ngFor="let img of images"
+        *ngFor="let img of cake.photos"
         [ngSrc]="img"
         width = "80"
         height= "80"
@@ -29,7 +29,7 @@
     <div *ngIf="source === 'muffin'" class="weight"><strong>Masa: </strong> jedan mafin ima oko 100 grama.</div>
     <div *ngIf="source === 'cheesecake'" class="weight"><strong>Masa: </strong>{{ cake.weight }}kg {{cake.portions}}</div>
     <div *ngIf="source === 'cheesecake'" class="delivery">Čuvati u frižideru na temperaturi od 4°C.</div>
-    <div class="delivery"><strong>Rok upotrebe:</strong> 7 dana od isporuke.</div>
+    <div class="delivery"><strong>Rok upotrebe:</strong>{{ cake.exp_date }}</div>
     <div class="delivery"><strong>Molimo Vas poručite željene proizvode minimum 2 dana ranije (48h).</strong></div>
     
     

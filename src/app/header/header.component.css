@@ -39,7 +39,7 @@
     left: 0;
     width: 100vw;
     flex-direction: column;
-    background-color: rgba(85, 96, 65, 0.8);
+    background-color: rgba(230, 224, 217, 0.7);
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     padding: 1rem 0;
     z-index: 1000;
@@ -53,14 +53,13 @@
   .nav-menu.responsive a {
     margin: 1rem 0;
     font-size: 18px;
-    color: #cfb97d;
+    color: #455F3A;
     text-align: center;
     width: 100%;
   }
 }
 .header {
   /*background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/assets/footer.png'); /* Dodaj svoju sliku ovde */
-  background-color: rgba(85, 96, 65, 0.8);
   position: fixed;
   width: 100%;
   left: 0;
@@ -80,17 +79,17 @@
 .nav-menu a {
   margin-left: 1.5rem;
   text-decoration: none;
-  color: #cfb97d;
-  font-weight: 500;
+  color: #455F3A;
+  font-weight: 600;
 }
 
 .lang {
-    color: #cfb97d;
+    color: #455F3A;
     display: flex;
     justify-content: space-between;
 }
 .lang a{
-    color: #cfb97d;
+    color: #455F3A;
     text-decoration: none;
 }
 .lang a:hover{
@@ -107,13 +106,13 @@
   position: relative;
   cursor: pointer;
   user-select: none;
-  color: #cfb97d;
+  color: #455F3A;
   padding: 10px;
 }
 
 .language-dropdown span {
   padding: 5px 10px;
-  border: 1px solid #cfb97d;
+  border: 1px solid #455F3A;
   border-radius: 4px;
 }
 
@@ -125,7 +124,7 @@
   list-style: none;
   padding: 0;
   margin: 4px 0 0;
-  border: 1px solid #cfb97d;
+  border: 1px solid #455F3A;
   border-radius: 4px;
   z-index: 1000;
 }
@@ -133,12 +132,12 @@
 .language-options li {
   padding: 5px 10px;
   cursor: pointer;
-  color: #cfb97d;
-  background-color: rgba(85, 96, 65, 0.8);
+  color: #455F3A;
+  background-color: rgba(230, 224, 217, 0.8);
 }
 
 .language-options li:hover {
-  background-color: rgba(85, 96, 65, 1);
+  background-color: rgba(230, 224, 217, 0.8);
 }
 
 

@@ -15,8 +15,11 @@ import { NgOptimizedImage } from '@angular/common';
 export class HomeComponent {
 
           constructor(private router: Router) {}
-          gotoMuffin() {
-                this.router.navigate(['muffin']);
+          gotoCream() {
+                this.router.navigate(['cream']);
+          }
+          gotoDubai(){
+                  this.router.navigate(['dubai']);
           }
           gotoCheesecake() {
                 this.router.navigate(['cheesecake']);

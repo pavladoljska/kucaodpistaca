@@ -11,7 +11,7 @@
 .banner p{
     padding-top: 200px;
     padding-left: 20px;
-    color:#cfb97d;
+    color: #E6E0D9  ;
     font-weight: 500;
     font-size: 50px;
     font-style: oblique;
@@ -19,52 +19,33 @@
 }
 .banner button {
     width:100px;
-    height:50px;
-    font-weight: 100;
+    height:90px;
+    font-weight: 300;
     margin: 20px;
     padding: 10px;
-    color: #cfb97d;
-    background-color: #556041;
+    color:   #455F3A;
+    background-color: rgba(230, 224, 217, 0.9);
     border-radius: 8px;
     text-align: center;
     font-size: medium;
 }
+.banner-buttons {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
 .welcome {
     display: flex;
     padding: 45px;
-    background-color: rgba(207, 185, 125, 0.5);
+    background-color: rgba(230, 224, 217, 0.9);
 }
 .welcome p {
     font-size:25px;
     font-style: italic;
     text-align: center;
-    color:#556041;
+    color:#455F3A;
 }
-.desc {
-    display: flex;
-    flex-direction: row;
-    padding: 40px;
-    justify-content: space-around;
-}
-.desc img
-{
-    border-radius: 50%;
-    box-shadow: 2px 4px 10px rgba(85, 96, 65, 0.8);
-}
-.desc p {
-    font-size: 25px;
-    font-style: oblique;
-    color:#556041;
-    text-align: center;
-    padding: 60px;
-}
-.fresh {
-    color: #556041;
-    padding: 60px;
-    font-size: 38px;
-    text-align: center;
-    font-family: 'Annie Use Your Telescope';
-}
+
 @media (max-width: 768px) {
     .banner p{
         padding-top: 300px;

@@ -13,7 +13,7 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 })
 
 export class HeaderComponent {
-        @Input() backgroundColor = 'rgba(85, 96, 65, 0.8)'; 
+        @Input() backgroundColor = 'rgba(230, 224, 217, 0.7)'; 
         menuOpen = false;
         constructor(private router: Router) {}
       

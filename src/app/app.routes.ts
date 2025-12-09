@@ -9,6 +9,7 @@ import { CartComponent } from './cart/cart.component';
 import { ProductComponent } from './product/product.component';
 import { OrderComponent } from './order/order.component';
 import { BitesComponent } from './bites/bites.component';
+import { CreamComponent } from './cream/cream.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -21,5 +22,6 @@ export const routes: Routes = [
     { path: 'product', component: ProductComponent},
     { path: 'order', component: OrderComponent},
     { path: 'bites', component: BitesComponent},
+    { path: 'cream', component: CreamComponent}
 ];
 

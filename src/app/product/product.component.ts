@@ -177,7 +177,6 @@ export class ProductComponent {
               this.source = params['source'] || '';
               console.log('SOURCE:', this.source); // test
         });
-        console.log("rileeeeeeee");
         const storedId = localStorage.getItem('id');
         //localStorage.removeItem('id');
         this.cakeId = storedId ? Number(storedId) : 0;

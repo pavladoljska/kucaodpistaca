@@ -9,4 +9,6 @@ export class Cake {
     photos: string[] = [];
     descr: string = '';
     note: string = '';
+    exp_date: string = '';
+    product_type: string = '';
 }

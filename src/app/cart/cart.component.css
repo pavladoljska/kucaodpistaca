@@ -14,7 +14,7 @@ body {
   padding: 1rem;
   padding-top:150px;
   font-family: Arial, sans-serif;
-  color:#cfb97d;
+  color:#AC9173;
 }
 
 h1 {
@@ -34,7 +34,7 @@ h1 {
 .cart-table th,
 .cart-table td, .ngContainer {
   padding: 12px;
-  border-bottom: 1px solid #909634;
+  border-bottom: 1px solid #455F3A;
   text-align: center;
 }
 
@@ -79,8 +79,8 @@ input[type="number"] {
 
 .coupon-section button {
   padding: 10px 20px;
-  background-color: #909634;
-  color: white;
+  background-color: #455F3A;
+  color: #E6E0D9 ;
   border: none;
   cursor: pointer;
 }
@@ -92,12 +92,11 @@ input[type="number"] {
   padding: 8px;
   margin-top: 5px;
   margin-left: 5px;
-  color:#cfb97d;
-  color: white;
+  color: #E6E0D9 ;
   width: 170px;
   border-radius: 20%;
-  border-color: #909634;
-  background-color: #909634;
+  border-color: #455F3A;
+  background-color: #455F3A;
 }
 .totals-section p {
   padding: 10px;
@@ -117,12 +116,12 @@ input[type="number"] {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  background-color: #909634;
+  background-color: #455F3A;
 }
 
 .checkout {
-  background-color: #909634;
-  color: white;
+  background-color: #455F3A;
+  color: #E6E0D9 ;
 }
 
 

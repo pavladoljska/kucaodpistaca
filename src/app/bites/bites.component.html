@@ -2,125 +2,43 @@
     <app-header></app-header>
 
     <div class="banner">
+        
     </div>
+
     <section class="about-pistachio">
         <div class="about-container">
             <div class="pistachio-grid">
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(33)" class="pistImg" src="/assets/posni%20mix1/posnimix1%20bezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Kuglice posni mix 1</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(33,'Kuglice posni mix 1', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="33" (click) = "gotoProduct($event)">Saznaj više</button>
+                <div class="pistachio-card" *ngFor="let p of products">
+
+                    <img
+                    class="pistImg"
+                    *ngIf="p.photos?.length"
+                    [ngSrc]="p.photos[0]"
+                    loading="lazy"
+                    width="200"
+                    height="100"
+                    [alt]="p.name"
+                    (click)="gotoProduct(p)"
+                    />
+
+                    <h3>{{ p.name }}</h3>
+
+                    <p>{{ p.price }} RSD/KG</p>
+                    <button (click)="addToCart1(p)">
+                    <i class="fas fa-shopping-cart"></i> Dodaj u korpu
+                    </button>
+
+                    <button [value]="p.id" (click)="gotoProduct(p)">
+                    Saznaj više
+                    </button>
+
                 </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(34)" class="pistImg" src="/assets/posni%20mix2/posnimix2%20bezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Kuglice posni mix 2</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(34,'Kuglice posni mix 2', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="34" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(32)" class="pistImg" src="/assets/coko%20mix/cokomix%20bezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Bezglutenski čoko mix</h3>
-                    <p>3500RSD/KG</p>
-                    <button (click)="addToCart(32,'Bezglutenski čoko mix', 3500)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="32" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(28)" class="pistImg" src="/assets/dubai%20urma/Dubaiurma%20bezpozadine.webp" loading="lazy" width="200" height="100" alt="Dubai urma">
-                    <h3>Dubai urma</h3>
-                    <p>3500RSD/KG</p>
-                    <button (click)="addToCart(28,'Dubai urma', 3500)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="28" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(29)" class="pistImg" src="/assets/dubai%20srce/Dubaisrce%20bezpozadine.webp" loading="lazy" width="200" height="100" alt="Dubai srce">
-                    <h3>Dubai srce</h3>
-                    <p>3500RSD/KG</p>
-                    <button (click)="addToCart(29,'Dubai srce', 3500)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="29" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(30)" class="pistImg" src="/assets/dubai%20krug/Dubaikrug%20bezpozadine.webp" loading="lazy" width="200" height="100" alt="Dubai krug">
-                    <h3>Dubai krug</h3>
-                    <p>3500RSD/KG</p>
-                    <button (click)="addToCart(30,'Dubai krug', 3500)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="30" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(31)" class="pistImg" src="/assets/dubai%20kocka/Dubaikocka%20bezpozadine.webp" loading="lazy" width="200" height="100" alt="Dubai kocka">
-                    <h3>Dubai kocka</h3>
-                    <p>3500RSD/KG</p>
-                    <button (click)="addToCart(31,'Dubai kocka', 3500)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="31" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(19)" class="pistImg" src="/assets/pistac%20kuglice/pistackuglicabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Pistać kuglice</h3>
-                    <p>4000RSD/KG</p>
-                    <button (click)="addToCart(19,'Pistaćkuglice', 4000)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="19" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(20)" class="pistImg" src="/assets/badem%20kuglice/bademkuglicabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Badem kuglice</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(20,'Badem kuglice', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="20" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(21)" class="pistImg" src="/assets/orah%20kuglice/orahkuglicabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Orah kuglice</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(21,'Orah kuglice', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="21" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(22)" class="pistImg" src="/assets/lesnik%20kuglice/lesnikkuglicabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Lešnik kuglice</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(22,'Lešnik kuglice', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="22" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(23)" class="pistImg" src="/assets/kikiriki%20kuglice/kikirikikuglicabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Kikiriki kuglice</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(23,'Kikiriki kuglice', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="23" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(24)" class="pistImg" src="/assets/kajsija%20kuglice/kajsijakuglicabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Kajsija kuglice</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(24,'Kajsija kuglice', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="24" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(25)" class="pistImg" src="/assets/malina%20kuglice/malinakuglicabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Malina kuglice</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(25,'Malina kuglice', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="25" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(26)" class="pistImg" src="/assets/borovnica%20kuglice/borovnicakuglicabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Borovnica kuglice</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(26,'Borovnica kuglice', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="26" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
-                <div class="pistachio-card">
-                    <img (click) = "gotoProduct1(27)" class="pistImg" src="/assets/cvet smokva/cvetsmokvabezpozadine.webp" loading="lazy" width="200" height="100" alt="Pistać kuglice">
-                    <h3>Cvet od smokve i pistaća</h3>
-                    <p>2800RSD/KG</p>
-                    <button (click)="addToCart(27,'Cvet od smokve i pistaća', 2800)"><i class="fas fa-shopping-cart"></i>Dodaj u korpu</button>
-                    <button value="27" (click) = "gotoProduct($event)">Saznaj više</button>
-                </div>
+
             </div>
         </div>
     </section>
+
+    
 
     <app-footer></app-footer>
 </body>

@@ -15,14 +15,12 @@
     <tbody>
        <tr *ngFor="let item of cartItems">
         <td class="product-info">
-          <img [src]="images[item.id]" alt="proizvod" />
+          <img [src]="item.photo" alt="proizvod" />
           <span>{{ item.name }}</span>
         </td>
         <td>{{ item.price }} RSD</td>
        
-        <td>
-            {{ item.quantity}} <span *ngIf="isKgItem(item.id)">kg</span>
-        </td>
+        <td>{{ item.quantity}} <span *ngIf="item.product_type==1">g</span> x {{ item.price }} RSD</td>
         <td>{{ item.price * item.quantity }} RSD</td>
         <td><button class = "deleteButton" (click)="removeItem(item)">×</button></td>
       </tr> 
@@ -46,11 +44,11 @@
     <tbody>
        <tr *ngFor="let item of cartItems">
         <td class="product-info">
-          <img [src]="images[item.id]" alt="proizvod" />
+          <img [src]="item.photo" alt="proizvod" />
           <span>{{ item.name }} </span>
           <button class = "deleteButton" (click)="removeItem(item)"> ×</button>
         </td>
-        <td>{{ item.quantity}} <span *ngIf="isKgItem(item.id)">kg</span> x {{ item.price }} RSD</td>
+        <td>{{ item.quantity}} <span *ngIf="item.product_type==1">g</span> x {{ item.price }} RSD</td>
         <td>{{ item.price * item.quantity }} RSD</td>
       </tr> 
     </tbody>

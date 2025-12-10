@@ -7,6 +7,7 @@ import { URL } from '../models/URL';
 import { Cake } from '../models/Cake';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Router } from '@angular/router';
+import { CartItem } from '../models/CartItem';
 
 @Component({
   selector: 'app-cream',
@@ -26,11 +27,10 @@ export class CreamComponent {
       this.products = data;
       
       this.products.forEach(cake => {
-        this.imagesService.getImages(cake.id).subscribe((data: URL[]) => {
+        this.imagesService.getImages(cake.id, cake.product_type).subscribe((data: URL[]) => {
           cake.photos = data.map(urlObj => urlObj.url);
         });
       });
-      console.log(this.products);
     });
   }
 
@@ -38,6 +38,30 @@ export class CreamComponent {
     localStorage.setItem('selectedProduct', JSON.stringify(product));
     this.router.navigate(['product'], { queryParams: { source: 'cream' } });
   }
+
+  addToCart1(product: Cake): void {
+     
+      const item: CartItem = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        quantity: 1,
+        photo: product.photos ? product.photos[0] : ''
+      };
+     
+      const stored = localStorage.getItem('cartItems');
+      let cart: CartItem[] = stored ? JSON.parse(stored) : [];
+     
+      const existing = cart.find(c => c.id === item.id);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push(item);
+      }
+     
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+      alert(item.quantity + " x "+ item.name + " uspešno dodat u korpu");
+    }
 
 
 }

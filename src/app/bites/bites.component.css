@@ -11,7 +11,7 @@
 .banner p{
     padding-top: 200px;
     padding-left: 20px;
-    color:#cfb97d;
+    color:#E6E0D9 ;
     font-weight: 500;
     font-size: 50px;
     font-style: oblique;
@@ -48,7 +48,7 @@
 }
 
 .pistachio-card {
-  background-color: #cfb97d;
+  background-color: #E6E0D9 ;
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -77,7 +77,7 @@
   margin-bottom: 55px;
 }
 .pistachio-card h3 {
-  color: #909634;
+  color: #455F3A;
   font-size: 1.4rem;
   margin-bottom: 10px;
 }
@@ -89,7 +89,7 @@
 }
 
 .pistachio-card button {
-    background-color: #909634;
+    background-color:  #455F3A;
     margin: 5px;
     /*padding: 5px;*/
     border: none;
@@ -101,14 +101,14 @@
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    color:#cfb97d;
+    color:#E6E0D9;
 }
 .pistachio-card button:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 .pistachio-card i {
-    color:#556041;
+    color:#E6E0D9;
     margin-right: 10px;
 }
 

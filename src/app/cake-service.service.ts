@@ -21,4 +21,10 @@ export class CakeServiceService {
   getCreams() {
       return this.http.get<Cake[]>(`${this.productApiUrl}?type=cream`);
   }
+  getDubais() {
+      return this.http.get<Cake[]>(`${this.productApiUrl}?type=dubai`);
+  }
+  getBites() {
+      return this.http.get<Cake[]>(`${this.productApiUrl}?type=bites`);
+  }
 }

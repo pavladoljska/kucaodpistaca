@@ -18,13 +18,14 @@
                     width="200"
                     height="100"
                     [alt]="p.name"
+                    (click)="gotoProduct(p)"
                     />
 
                     <h3>{{ p.name }}</h3>
 
                     <p>{{ p.price }} RSD ({{ p.weight }}g)</p>
 
-                    <button>
+                    <button (click)="addToCart1(p)">
                     <i class="fas fa-shopping-cart"></i> Dodaj u korpu
                     </button>
 

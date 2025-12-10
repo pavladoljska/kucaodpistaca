@@ -11,7 +11,7 @@ export class ImagesServiceService {
   
     constructor(private http: HttpClient) {     
     }
-    getImages(id:number) {
-        return this.http.get<URL[]>(`${this.apiUrl}?id=${id}`);
+    getImages(id:number, product_type:number|undefined) {
+        return this.http.get<URL[]>(`${this.apiUrl}?id=${id}&product_type=${product_type}`);
     }
 }

@@ -4,15 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { HeaderComponent } from '../header/header.component';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-
-
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  image?: string; // opcionalno
-}
+import { CartItem } from '../models/CartItem';
 
 @Component({
   selector: 'app-cart',

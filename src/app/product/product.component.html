@@ -13,6 +13,7 @@
         class="thumbnail"
         (click)="changeImage(img)"
         [class.active]="img === selectedImage"
+        alt = ""
       />
     </div>
   </div>
@@ -21,15 +22,15 @@
   <div class="details-section">
     <h1>{{ cake.name }}</h1>
     <div class="price">{{ cake.price}}RSD</div>
-    <div *ngIf="source != 'bites'" class="delivery"><strong>Opis: </strong> {{cake.descr }}</div>
+    <div *ngIf="cake.descr" class="delivery"><strong>Opis: </strong> {{cake.descr }}</div>
     <div class="ingredients"><strong>Sastojci:</strong> {{ cake.ingredients }}</div>
-    <div class="delivery"><strong>Dostava:</strong> {{ cake.delivery }} </div>
-    <div class="delivery" *ngIf="source === 'bites'"><strong>Napomena:</strong> {{cake.note}}</div>
-    <div *ngIf="source === 'bites'" class="weight"><strong>Masa: </strong> jedan komad ima oko {{cake.weight}} grama.</div>
+    <div class="delivery" *ngIf="cake.delivery"><strong>Dostava:</strong> {{ cake.delivery }} </div>
+    <div class="delivery" *ngIf="cake.note"><strong>Napomena:</strong> {{cake.note}}</div>
+    <div *ngIf="(cake.id>2 && cake.product_type==2) || cake.product_type==3" class="weight"><strong>Masa: </strong> jedan komad ima oko {{cake.weight}} grama.</div>
     <div *ngIf="source === 'muffin'" class="weight"><strong>Masa: </strong> jedan mafin ima oko 100 grama.</div>
     <div *ngIf="source === 'cheesecake'" class="weight"><strong>Masa: </strong>{{ cake.weight }}kg {{cake.portions}}</div>
     <div *ngIf="source === 'cheesecake'" class="delivery">Čuvati u frižideru na temperaturi od 4°C.</div>
-    <div class="delivery"><strong>Rok upotrebe:</strong>{{ cake.exp_date }}</div>
+    <div *ngIf="cake.exp_date" class="delivery"><strong>Rok upotrebe:</strong>{{ cake.exp_date }}</div>
     <div class="delivery"><strong>Molimo Vas poručite željene proizvode minimum 2 dana ranije (48h).</strong></div>
     
     
@@ -38,7 +39,7 @@
     <div class="quantity-section">
       <button (click)="decreaseQuantity()">-</button>
       <div *ngIf="source === 'muffin' || source === 'bites'" class="quantity">{{ quantity }}kg </div>
-      <div *ngIf="source === 'cheesecake'" class="quantity">{{ quantity }}</div>
+      <div class="quantity">{{ quantity }}</div>
       <button (click)="increaseQuantity()">+</button>
     </div>
 

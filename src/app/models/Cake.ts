@@ -10,5 +10,5 @@ export class Cake {
     descr: string = '';
     note: string = '';
     exp_date: string = '';
-    product_type: string = '';
+    product_type?: number = 0;
 }

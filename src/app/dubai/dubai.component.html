@@ -1,0 +1,47 @@
+<body>
+    <app-header></app-header>
+
+    <div class="banner">
+        
+    </div>
+
+    <section class="about-pistachio">
+        <div class="about-container">
+            <div class="pistachio-grid">
+                <div class="pistachio-card" *ngFor="let p of products">
+
+                    <img
+                    class="pistImg"
+                    *ngIf="p.photos?.length"
+                    [ngSrc]="p.photos[0]"
+                    loading="lazy"
+                    width="200"
+                    height="100"
+                    [alt]="p.name"
+                    (click)="gotoProduct(p)"
+                    />
+
+                    <h3>{{ p.name }}</h3>
+
+                    <p *ngIf="p.id>3">{{ p.price }} RSD/KG</p>
+                    <p *ngIf="p.id<3">{{ p.price }} RSD ({{p.weight}}g)</p>
+                    <p *ngIf="p.id==3">{{ p.price }} RSD (6x{{p.weight}}g)</p>
+
+                    <button (click)="addToCart1(p)">
+                    <i class="fas fa-shopping-cart"></i> Dodaj u korpu
+                    </button>
+
+                    <button [value]="p.id" (click)="gotoProduct(p)">
+                    Saznaj više
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    
+
+    <app-footer></app-footer>
+</body>

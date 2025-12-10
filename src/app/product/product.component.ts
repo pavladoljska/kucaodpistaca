@@ -14,6 +14,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './product.component.html',
   styleUrl: './product.component.css'
 })
+
 export class ProductComponent {
 
     cakeId:number = 0;
@@ -177,23 +178,17 @@ export class ProductComponent {
               this.source = params['source'] || '';
               console.log('SOURCE:', this.source); // test
         });
-        const storedId = localStorage.getItem('id');
-        //localStorage.removeItem('id');
-        this.cakeId = storedId ? Number(storedId) : 0;
-        if (this.cakeId > 0) {
-          this.cakeService.getCake(this.cakeId).subscribe(data => {
-            this.cake = data;
-        });
-        console.log(this.cake.portions);
-        this.images = this.photos[this.cakeId-1];
-        this.selectedImage = this.images[0];
-        if((this.cakeId > 6 && this.cakeId<14) || (this.cakeId>16 && this.cakeId<32)) {
-        {
-          this.quantity = 0.5;
+        const storedProduct = localStorage.getItem('selectedProduct');
+        console.log('STORED PRODUCT:', storedProduct); // test
+        if (storedProduct) {
+          this.cake = JSON.parse(storedProduct);
+          this.selectedImage = this.cake.photos[0];
+          this.cakeId = this.cake.id;
         }
-      }
+        if(((this.cake.product_type==2 && this.cake.id >3) || (this.cake.product_type==3 && this.cake.id>2)))
+          this.quantity = 0.5;
     }
-  }
+  
 
     changeImage(img: string): void {
       this.selectedImage = img;
@@ -205,7 +200,7 @@ export class ProductComponent {
         this.quantity += 0.1;
         this.quantity = Number(this.quantity.toFixed(1));
       }
-      else if(this.cakeId > 18 && this.cakeId<32) {
+      else if((this.cake.product_type==2 && this.cake.id >3) || (this.cake.product_type==3 && this.cake.id>2)) {
         this.quantity += 0.5;
         this.quantity = Number(this.quantity.toFixed(1));
       }
@@ -237,7 +232,9 @@ export class ProductComponent {
               id: this.cake.id, 
               name: this.cake.name,
               price: this.cake.price,
-              quantity: this.quantity
+              quantity: this.quantity,
+              product_type: this.cake.product_type,
+              photo: this.cake.photos ? this.cake.photos[0] : ''
             };
   
             const stored = localStorage.getItem('cartItems');

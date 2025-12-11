@@ -27,4 +27,10 @@ export class CakeServiceService {
   getBites() {
       return this.http.get<Cake[]>(`${this.productApiUrl}?type=bites`);
   }
+  getLenten() {
+      return this.http.get<Cake[]>(`${this.productApiUrl}?type=lenten`);
+  }
+  getCheesecake() {
+      return this.http.get<Cake[]>(`${this.productApiUrl}?type=cheesecake`);
+  }
 }

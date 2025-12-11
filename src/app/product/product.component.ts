@@ -179,7 +179,6 @@ export class ProductComponent {
               console.log('SOURCE:', this.source); // test
         });
         const storedProduct = localStorage.getItem('selectedProduct');
-        console.log('STORED PRODUCT:', storedProduct); // test
         if (storedProduct) {
           this.cake = JSON.parse(storedProduct);
           this.selectedImage = this.cake.photos[0];
@@ -228,26 +227,58 @@ export class ProductComponent {
 
   addToCart(): void {
   
-            const item: CartItem = {
-              id: this.cake.id, 
-              name: this.cake.name,
-              price: this.cake.price,
-              quantity: this.quantity,
-              product_type: this.cake.product_type,
-              photo: this.cake.photos ? this.cake.photos[0] : ''
-            };
+      const item: CartItem = {
+        id: this.cake.id, 
+        name: this.cake.name,
+        price: this.cake.price,
+        quantity: this.quantity,
+        product_type: this.cake.product_type,
+        photo: this.cake.photos ? this.cake.photos[0] : ''
+      };
   
-            const stored = localStorage.getItem('cartItems');
-            let cart: CartItem[] = stored ? JSON.parse(stored) : [];
-  
-            const existing = cart.find(c => c.id === item.id);
-            if (existing) {
-              existing.quantity += item.quantity;
-            } else {
-              cart.push(item);
-            }
-  
-            localStorage.setItem('cartItems', JSON.stringify(cart));
-            alert(item.quantity + " x "+ item.name + " uspešno dodat u korpu");
-          }
+      const stored = localStorage.getItem('cartItems');
+      let cart: CartItem[] = stored ? JSON.parse(stored) : [];
+
+      const existing = cart.find(c => c.id === item.id);
+      if (existing) {
+        existing.quantity += item.quantity;
+      } else {
+        cart.push(item);
+      }
+
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+      alert(item.quantity + " x "+ item.name + " uspešno dodat u korpu");
+    }
+
+    addToCartWithSize(product: Cake, size: string): void {
+        let price: number = 0;
+        let dimension: string = '';
+        if(size === 's') {
+          price = product.min_price!;
+          dimension = 'mali';
+        } else if(size === 'b') {
+          price = product.price!;
+          dimension = 'veliki';
+        }
+        const item: CartItem = {
+          id: product.id,
+          name: product.name + ' - ' + dimension,
+          price: price,
+          quantity: this.quantity,
+          photo: product.photos ? product.photos[0] : ''
+        };
+
+        const stored = localStorage.getItem('cartItems');
+        let cart: CartItem[] = stored ? JSON.parse(stored) : [];
+       
+        const existing = cart.find(c => c.id === item.id && c.name === item.name);
+        if (existing) {
+          existing.quantity += this.quantity;
+        } else {
+          cart.push(item);
+        }
+       
+        localStorage.setItem('cartItems', JSON.stringify(cart));
+        alert(this.quantity + " x "+ item.name + " uspešno dodat u korpu");
+    }
 }

@@ -1,0 +1,65 @@
+<body>
+    <app-header></app-header>
+
+    <div class="banner">
+        <p>Kremasto zadovoljstvo<br>
+        u svakom zalogaju</p>
+    </div>
+
+    <section class="about-pistachio">
+        <div class="about-container">
+            <div class="pistachio-grid">
+                <div class="pistachio-card" *ngFor="let p of products">
+
+                    <img
+                    class="pistImg"
+                    [ngSrc]="p.photos[0]"
+                    loading="lazy"
+                    width="200"
+                    height="100"
+                    [alt]="p.name"
+                    (click)="gotoProduct(p)"
+                    />
+
+                    <h3>{{ p.name }}</h3>
+
+                    <p *ngIf="p.min_price && p.min_weight">{{ p.min_price }} RSD ({{ p.min_weight }}kg)  </p>
+                    <p *ngIf="p.price && p.weight">{{ p.price }} RSD ({{ p.weight }}kg)</p>
+
+
+
+                    <div class="button-group">
+                      <button 
+                        (click)="toggleSizeMenu(p)"
+                        class="add-to-cart-btn">
+                        <i class="fas fa-shopping-cart"></i> Dodaj u korpu
+                      </button>
+                      
+                      <div class="size-dropdown" *ngIf="selectedProduct?.id === p.id && showSizeMenu">
+                        <button 
+                          (click)="addToCartWithSize(p, 's'); toggleSizeMenu(null)"
+                          class="size-option">
+                          <span class="size-name">Mali</span>
+                          <span class="size-price">{{ p.min_price }} RSD</span>
+                        </button>
+                        <button 
+                          (click)="addToCartWithSize(p, 'b'); toggleSizeMenu(null)"
+                          class="size-option">
+                          <span class="size-name">Veliki</span>
+                          <span class="size-price">{{ p.price }} RSD</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <button [value]="p.id" (click)="gotoProduct(p)">
+                    Saznaj više
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <app-footer></app-footer>
+</body>

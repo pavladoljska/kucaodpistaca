@@ -33,9 +33,9 @@
     <div class="field"><label>Željeno vreme dostave *</label>
       <select formControlName="deliveryTime">
         <option value="">Izaberite</option>
-        <option value="10-13h">9-12h</option>
-        <option value="13-17h">12-15h</option>
-        <option value="17-21h">15-18h</option>
+        <option value="10-13h">10-13h</option>
+        <option value="13-16h">13-16h</option>
+        <option value="16-19h">16-19h</option>
       </select>
       <div *ngIf="orderForm.get('name')?.touched && orderForm.get('name')?.invalid" class="error">
               Ovo polje je obavezno</div>

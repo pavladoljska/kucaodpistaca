@@ -11,4 +11,6 @@ export class Cake {
     note: string = '';
     exp_date: string = '';
     product_type?: number = 0;
+    min_price?: number = 0;
+    min_weight?: number = 0;
 }

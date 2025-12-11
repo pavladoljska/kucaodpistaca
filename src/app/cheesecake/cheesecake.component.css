@@ -8,6 +8,92 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+}
+
+.add-to-cart-btn {
+  background-color: #455F3A !important;
+  color: #E6E0D9 !important;
+  margin: 5px !important;
+  width: 100%;
+  font-weight: bold !important;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #3a4a2e !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.size-dropdown {
+  background: white;
+  border: 2px solid #455F3A;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.size-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  width: 100%;
+  border: none;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #eee;
+}
+
+.size-option:last-child {
+  border-bottom: none;
+}
+
+.size-option:hover {
+  background-color: #f5f5f0;
+}
+
+.size-option:active {
+  background-color: #e8e8e0;
+}
+
+.size-name {
+  font-weight: bold;
+  color: #E6E0D9 ;
+  min-width: 80px;
+  text-align: left;
+}
+
+.size-price {
+  margin-left: 20px;
+  font-weight: bold;
+  color: #E6E0D9 ;
+  text-align: right;
+  flex: 1;
+}
 .banner p{
     padding-top: 200px;
     padding-left: 20px;
@@ -91,9 +177,8 @@
 .pistachio-card button {
     background-color:  #455F3A;
     margin: 5px;
-    /*padding: 5px;*/
     border: none;
-    color: white;
+    color: #E6E0D9;
     padding: 10px 20px;
     border-radius: 8px;
     font-weight: bold;
@@ -101,12 +186,13 @@
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    color:#E6E0D9;
 }
+
 .pistachio-card button:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
+
 .pistachio-card i {
     color:#E6E0D9;
     margin-right: 10px;

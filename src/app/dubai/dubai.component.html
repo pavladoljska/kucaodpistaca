@@ -25,7 +25,7 @@
 
                     <p *ngIf="p.id>3">{{ p.price }} RSD/KG</p>
                     <p *ngIf="p.id<3">{{ p.price }} RSD ({{p.weight}}g)</p>
-                    <p *ngIf="p.id==3">{{ p.price }} RSD (6x{{p.weight}}g)</p>
+                    <p *ngIf="p.id==3">{{ p.price }} RSD (4x{{p.weight}}g)</p>
 
                     <button (click)="addToCart1(p)">
                     <i class="fas fa-shopping-cart"></i> Dodaj u korpu

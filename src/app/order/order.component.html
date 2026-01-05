@@ -60,7 +60,7 @@
       </tr> --> 
       <tr><td><strong>Ukupno</strong></td><td><strong>{{ total }}RSD</strong></td></tr>
     </table>
-    <button type="submit">Pošalji porudžbinu</button>
+    <button type="submit" [disabled]="isSubmitting">{{ isSubmitting ? 'Slanje...' : 'Pošalji porudžbinu' }}</button>
   </div>
 </form>
 <app-footer></app-footer>

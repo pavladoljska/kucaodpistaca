@@ -14,6 +14,7 @@
   flex-direction: column;
   gap: 5px;
   position: relative;
+  overflow: visible;
 }
 
 .add-to-cart-btn {

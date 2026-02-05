@@ -15,7 +15,7 @@
   width: 28px;
   height: 4px;
   margin: 4px 0;
-  background: #cfb97d;
+  background: #455F3A;
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -39,7 +39,7 @@
     left: 0;
     width: 100vw;
     flex-direction: column;
-    background-color: rgba(230, 224, 217, 0.7);
+    background-color: rgba(230, 224, 217, 0.95);
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
     padding: 1rem 0;
     z-index: 1000;

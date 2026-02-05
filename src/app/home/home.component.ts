@@ -24,5 +24,11 @@ export class HomeComponent {
           gotoCheesecake() {
                 this.router.navigate(['cheesecake']);
           }
+          gotoLCakes(){
+            this.router.navigate(['lenten']);
+          }
+          gotoLBites() {
+            this.router.navigate(['bites']);
+          }
 
 }

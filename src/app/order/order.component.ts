@@ -29,6 +29,7 @@ export class OrderComponent {
 
   cartItems: CartItem[] = [];
   minDate: string='';
+  isSubmitting: boolean = false;
 
   ngOnInit(): void {
       const storedItems = localStorage.getItem('cartItems');
@@ -112,8 +113,8 @@ export class OrderComponent {
           templateParams,
           'mCINA6gfvjRf_iWje'
         )
-        .then(() => alert('Porudžbina poslata!'))
-        .catch(err => console.error('Greška pri slanju:', err));
+        .then(() => { alert('Porudžbina poslata!'); this.isSubmitting = false; })
+        .catch(err => { console.error('Greška pri slanju:', err); this.isSubmitting = false; });
 
         localStorage.removeItem('cartItems');
         localStorage.removeItem('payment');
@@ -165,7 +166,16 @@ export class OrderComponent {
               this.orderForm.markAllAsTouched(); 
               return;
             }
+            this.isSubmitting = true;
             this.sendOrderEmail();
             localStorage.clear();
-          }
+      }
 }
+
+
+
+
+
+
+
+

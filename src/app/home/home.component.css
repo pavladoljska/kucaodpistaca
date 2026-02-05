@@ -9,7 +9,8 @@
     font-size:50px;font-style:oblique
 }
 .banner button{
-    width:100px;height:90px;
+    min-width:100px;
+    height:auto;
     margin:20px;padding:10px;
     color:#455F3A;
     background-color:rgba(230,224,217,.9);
@@ -27,111 +28,6 @@
     text-align:center;color:#455F3A
 }
 
-/* Specijalna praznična akcija */
-.special-offer{
-    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url(/assets/kremici.webp);
-    background-size:contain;background-position:center;background-repeat:repeat;
-    padding:40px 20px;margin:20px;
-    border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.15);
-    position:relative;overflow:hidden
-}
-
-.offer-container{
-    display:flex;justify-content:space-between;
-    align-items:center;max-width:1200px;
-    margin:0 auto;position:relative;z-index:1;gap:40px
-}
-
-.offer-content{
-    flex:1;color:#fff
-}
-
-.offer-title{
-    font-size:32px;font-weight:bold;
-    margin-bottom:40px;text-align:center;
-    color:#AC9173;
-    text-shadow:3px 3px 8px rgba(0,0,0,.8),0 0 10px rgba(0,0,0,.6);
-    animation:pulse 2s ease-in-out infinite
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(2.5);
-    }
-    50% {
-        transform: scale(1.5);
-    }
-}
-
-.offer-badge{
-    display:flex;flex-direction:column;gap:8px;
-    background:rgba(172,145,115,.4);padding:16px;
-    border-left:4px solid #AC9173;border-right:4px solid #AC9173;
-    border-radius:8px;margin-bottom:20px;text-align:center
-}
-
-.badge-text{
-    font-size:14px;font-weight:600;
-    color:#E6E0D9;letter-spacing:1px;
-    text-transform:uppercase;text-shadow:2px 2px 4px rgba(0,0,0,.8)
-}
-
-.badge-highlight{
-    font-size:24px;font-weight:bold;
-    color:#E6E0D9;
-    text-shadow:3px 3px 8px rgba(0,0,0,.8),0 0 10px rgba(0,0,0,.6)
-}
-
-.offer-description{
-    font-size:16px;line-height:1.6;
-    margin-bottom:24px;color:#E6E0D9;
-    text-shadow:2px 2px 4px rgba(0,0,0,.8)
-}
-
-.offer-button{
-    background-color:#AC9173;color:#E6E0D9;
-    padding:14px 32px;border:none;
-    border-radius:8px;font-size:16px;font-weight:bold;
-    cursor:pointer;transition:all .3s ease;
-    box-shadow:0 6px 15px rgba(0,0,0,.4);text-shadow:1px 1px 2px rgba(0,0,0,.5)
-}
-
-.offer-button:hover{
-    background-color:#e6d7a8;transform:translateY(-2px);
-    box-shadow:0 6px 12px rgba(0,0,0,.3)
-}
-
-.offer-button:active{transform:translateY(0)}
-
-.offer-decoration{
-    display:flex;flex-direction:column;gap:20px;
-    font-size:48px;animation:float 3s ease-in-out infinite;
-    color:#AC9173;font-weight:900
-}
-
-.snowflake{display:inline-block;animation:snowfall 3s ease-in-out infinite}
-.snowflake:nth-child(2){animation-delay:.5s}
-.snowflake:nth-child(3){animation-delay:1s}
-
-@keyframes float {
-    0%, 100% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes snowfall {
-    0%, 100% {
-        opacity: 0.6;
-        transform: translateX(0);
-    }
-    50% {
-        opacity: 1;
-        transform: translateX(10px);
-    }
-}
 
 @media (max-width: 768px) {
     .banner p{
@@ -148,7 +44,7 @@
 }
 @media (max-width: 400px) {
     .banner {
-        height: 500px;
+        height: 600px;
         
     }
     .banner p{
@@ -156,12 +52,15 @@
         padding-right: 200px;
         font-size: 20px;
     }
+    .banner-buttons {
+        flex-wrap: wrap;
+    }
     .banner button {
-        width: 50px;
-        height: 30px;
-        font-size:10px;
+        min-width: 45%;
+        height: auto;
+        font-size:12px;
         margin:10px;
-        padding: 2px;
+        padding: 5px;
     }
     .welcome{
         padding: 30px;
@@ -169,47 +68,11 @@
     .welcome p{
         font-size:15px;
     }
-    
-    .special-offer {
-        padding: 30px 15px;
-        margin: 15px;
-    }
-
-    .offer-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .offer-title {
-        font-size: 15px;
-        text-align: center;
-    }
-
-    .offer-content {
-        text-align: center;
-    }
-
-    .offer-description {
-        font-size: 14px;
-    }
-
-    .offer-button {
-        padding: 12px 28px;
-        font-size: 14px;
-        width: 100%;
-    }
-
-    .offer-decoration {
-        justify-content: center;
-        gap: 15px;
-        flex-direction: row;
-        font-size: 36px;
-    }
 }
 
 @media (max-width: 480px) {
     .banner {
-        height: 500px;
+        height: 600px;
     }
 
     .banner p {
@@ -220,18 +83,19 @@
     }
 
     .banner-buttons {
-        flex-direction: column;
+        flex-direction: row;
         margin-left: 0;
         gap: 10px;
         padding: 0 20px;
+        flex-wrap: wrap;
     }
 
     .banner button {
-        width: 50px;
-        height: 30px;
-        font-size: 10px;
+        min-width: 45%;
+        height: auto;
+        font-size: 12px;
         margin: 10px;
-        padding: 2px;
+        padding: 5px;
     }
 
     .welcome {
@@ -240,39 +104,5 @@
 
     .welcome p {
         font-size: 15px;
-    }
-
-    .special-offer {
-        padding: 20px 10px;
-        margin: 10px;
-    }
-
-    .offer-title {
-        font-size: 12px;
-        margin-bottom: 15px;
-    }
-
-    .badge-text {
-        font-size: 11px;
-    }
-
-    .badge-highlight {
-        font-size: 16px;
-    }
-
-    .offer-description {
-        font-size: 12px;
-        margin-bottom: 15px;
-    }
-
-    .offer-button {
-        padding: 10px 20px;
-        font-size: 12px;
-        width: 100%;
-    }
-
-    .offer-decoration {
-        font-size: 28px;
-        gap: 10px;
     }
 }

@@ -53,8 +53,6 @@ export class OrderComponent {
     for (let i = 0; i < this.cartItems.length; i++) {
         s+= this.cartItems[i].price * this.cartItems[i].quantity;
     }
-    if(s<5000)
-      s+=300;
     return s;
   }
 
@@ -99,8 +97,8 @@ export class OrderComponent {
           })),
 
           delivery: this.total>5000?0:300,
-          total: this.total + (this.total>5000?0:300),
           total1: this.total.toFixed(2),
+          total: this.total + (this.total>5000?0:300),
           date: formValues.deliveryDate,
           time: formValues.deliveryTime,
           payment: localStorage.getItem('payment')
@@ -138,8 +136,8 @@ export class OrderComponent {
           })),
 
           delivery: this.total>5000?0:300,
+          total1: this.total.toFixed(2),          
           total: this.total + (this.total>5000?0:300),
-          total1: this.total.toFixed(2),
           date: formValues.deliveryDate,
           time: formValues.deliveryTime,
           payment: localStorage.getItem('payment')
